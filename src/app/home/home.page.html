@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      Ionic Barcode Scanner
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="medium">
+    <ion-title>
+      Angular + Cordova
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-img src="assets/barcode.jpeg"></ion-img>
+
+    <ion-card-header>
+      <ion-card-title>Barcode/QR Scanning</ion-card-title>
+      <ion-card-subtitle>In Angular Cordova Apps</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="full" color="success" (click)="scanBarcode()">Scan a Code</ion-button>
+      <div *ngIf="scannedData">
+        <p>
+          Scanned Code Text : <b>{{ scannedData["text"] }}</b>
+        </p>
+        <p>
+          Scanned Code Format : <b>{{ scannedData["format"] }}</b>
+        </p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>QR Code Creation</ion-card-title>
+      <ion-card-subtitle>In Angular Cordova Apps</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input type="text" [(ngModel)]="inputData"></ion-input>
+      <ion-button expand="full" color="success" (click)="createBarcode()">Create a QR code</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
